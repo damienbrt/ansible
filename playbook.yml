@@ -1,8 +1,13 @@
+---
+-name: Copier coller 
+ hosts: web
+ remote_user: root
 
-- name: install nginx
-  hosts: all
-  become: yes
-  roles:
-    - nginxa
+ tasks:
+    -name: Copier coller fichier test1
+     win_copy:
+     src: C:\Users\dbarthe\Desktop\Travail\TestAnsible\Ansible\SalutTest.txt
+     dest: C:\inetpub\wwwroot\Test
 
 
+...
