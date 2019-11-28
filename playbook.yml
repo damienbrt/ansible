@@ -4,6 +4,13 @@
  remote_user: root
 
  tasks:
+
+    -name: show all the hosts matching the pattern, i.e. all but the group www
+      debug:
+        msg: "{{ item }}"       
+      with_inventory_hostnames:
+        - all:!www
+
     -name: Copier coller fichier test1
      win_copy:
      src: C:\Users\dbarthe\Desktop\Travail\TestAnsible\Ansible\SalutTest.txt
