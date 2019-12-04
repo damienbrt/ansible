@@ -1,12 +1,10 @@
 ---
--name: Test
- hosts: web
- remote_user: root
+- hosts: windows
 
- tasks:
-    - name: Induce an exception to see what happens
+  tasks:
+    - name: Test connection
       win_ping:
-        data: crash
+
 
 
 ...
