@@ -4,9 +4,9 @@
  remote_user: root
 
  tasks:
-    - name: Test reachability to 10.10.10.10 using default vrf
-      net_ping:
-        dest: 172.29.178.232
+    - name: Induce an exception to see what happens
+      win_ping:
+        data: crash
 
 
 ...
