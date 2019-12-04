@@ -1,5 +1,5 @@
 ---
--name: Copier coller 
+-name: Test
  hosts: web
  remote_user: root
 
