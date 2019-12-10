@@ -1,9 +1,9 @@
 ---
 - hosts: windows-server
 
-  tasks:
-    - name: Test connection
-      win_ping:
+   tasks:
+     - name: Test connection
+       win_ping:
 
 
 
