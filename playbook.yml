@@ -1,7 +1,6 @@
 ---
 - hosts: windows-server
-
+  remote_user: root
   tasks:
-  - name: Test connection
+    - name: test connection
       win_ping:
-...
