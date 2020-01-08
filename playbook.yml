@@ -4,3 +4,8 @@
   tasks:
     - name: test connection
       win_ping:
+    - name: Copy a single file, but keep a backup
+      win_copy:
+        src: E:\Test1\Test1.txt
+        dest: E:\Test2\Test1.txt
+        backup: yes
