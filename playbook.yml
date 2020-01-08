@@ -11,5 +11,5 @@
         remote_src: yes
     - name: Copy a single file
       win_copy:
-        src: host.yml
+        src: hosts.yml
         dest: E:\Test2\host.yml
