@@ -9,4 +9,5 @@
         src: E:\Test1\Test1.txt
         dest: E:\Test2\Test1.txt
         remote_src: yes
+        backup: yes
 
