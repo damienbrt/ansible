@@ -8,5 +8,8 @@
       win_copy:
         src: E:\Test1\Test1.txt
         dest: E:\Test2\Test1.txt
-        backup: yes
-
+        remote_src: yes
+    - name: Copy a single file
+      win_copy:
+        src: host.yml
+        dest: E:\Test2\host.yml
