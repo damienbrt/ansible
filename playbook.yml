@@ -7,32 +7,32 @@
 
     - name: Copy a single file
       win_copy:
-        src: E:\Test1\production-services_R19.5.0.2.zip
-        dest: E:\Test2\
+        src: E:\Depot1\production-services_R19.5.0.2.zip
+        dest: E:\Depot2\
         remote_src: yes
         
     - name: Unarchive a file that is already on the remote machine
       win_unzip:
-        src: E:\Test2\production-services_R19.5.0.2.zip
-        dest: E:\Test2\
+        src: E:\Depot2\production-services_R19.5.0.2.zip
+        dest: E:\Depot2\
         remote_src: yes
         
     - name: Unarchive a file that is already on the remote machine
       win_unzip:
-        src: E:\Test2\Albatross_2.0_R19.5.0.2.zip
-        dest: E:\Test2\
+        src: E:\Depot2\Albatross_2.0_R19.5.0.2.zip
+        dest: E:\Depot2\
         remote_src: yes
         
     - name: Unarchive a file that is already on the remote machine
       win_unzip:
-        src: E:\Test2\AlbatrossService_2.0_Inputs_R19.5.0.2.zip
-        dest: E:\Test2\
+        src: E:\Depot2\AlbatrossService_2.0_Inputs_R19.5.0.2.zip
+        dest: E:\Depot2\
         remote_src: yes
         
     - name: Unarchive a file that is already on the remote machine
       win_unzip:
-        src: E:\Test2\DataProductionService_R19.5.0.2.zip
-        dest: E:\Test2\
+        src: E:\Depot2\DataProductionService_R19.5.0.2.zip
+        dest: E:\Depot2\
         remote_src: yes
 
 
