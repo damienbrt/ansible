@@ -10,7 +10,7 @@
       archive:
         path:
         - E:\ConsolidationService\web.config
-        dest: E:\ConsolidationService\Archive.zip\{{ date }}.zip
+        dest: E:\ConsolidationService\Archive.zip\test
         format: zip
 
 
