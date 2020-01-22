@@ -10,7 +10,12 @@
         src: E:\Test1\production-services_R19.5.0.2.zip
         dest: E:\Test2\
         remote_src: yes
-
+        
+    - name: Unarchive a file that is already on the remote machine
+      win_unzip:
+        src: E:\Test2\production-services_R19.5.0.2.zip
+        dest: E:\Test2\
+        remote_src: yes
 
 
 
