@@ -7,7 +7,7 @@
 
     - name: Copy a single file
       win_copy:
-        src: C:\Utilisateurs\dbarthe\Documents\production-services_R19.5.0.2.zip
+        src: E:\Test1\production-services_R19.5.0.2.zip
         dest: E:\Test2\test.zip
         remote_src: yes
 
