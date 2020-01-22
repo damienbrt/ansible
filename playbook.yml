@@ -7,7 +7,7 @@
       
     - name: Download
       win_get_url:
-        url: https://artifactory.navblue.tech/artifactory/data-plus/Production-Services/production-services_R19.5.0.2.zip
+        url: https://file-examples.com/wp-content/uploads/2017/02/zip_2MB.zip
         dest: E:\Test2\production-services_R19.5.0.2.zip
 
 
