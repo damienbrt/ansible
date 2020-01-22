@@ -6,5 +6,9 @@
       win_ping:
     - name: Download earthrise.jpg to specified path
       win_get_url:
-        url: https://artifactory.navblue.tech/artifactory/data-plus/Production-Services/production-services_R19.5.0.2.zip
-        dest: E:\Test2\production-services_R19.5.0.2.zip
+        url: https://www.numerama.com/content/uploads/2019/05/trou-noir-espace-univers-astronomie.jpg
+        dest: E:\Test2\trou-noir-espace-univers-astronomie.jpg
+
+
+
+
