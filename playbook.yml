@@ -5,7 +5,7 @@
     date: "{{ lookup('pipe', 'date +%Y%m%d') }}"    
 	
   tasks:
-	- name: test connection
+    - name: test connection
       win_ping:
 
     - name: Copy a single file
