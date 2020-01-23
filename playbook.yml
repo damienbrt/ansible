@@ -28,7 +28,7 @@
     - name: Zip all file in Depot1\Archive
       win_shell: |
         $compress = @{
-        Path= "E:\ConsolidationService\Web.config", "E:\ConsolidationService\bin"
+        Path= "E:\ConsolidationService\Web.config", "E:\ConsolidationService\bin", "E:\ConsolidationService\ConsolidationService.log"
         CompressionLevel = "Fastest"
         DestinationPath = "E:\Depot1\Archive\{{ date }}.zip"
         }
