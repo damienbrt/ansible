@@ -5,11 +5,9 @@
   tasks:
     - name: test connection
       win_ping:
-    - name: zip a directory
-      win_zip:
-        src:  E:\ConsolidationService\Web.config
-        dest:  E:\ConsolidationService\Archive\test.zip
-        creates: E:\ConsolidationService\Archive\test.zip
+    - name: Run multi-lined shell commands
+      win_shell: Compress-Archive -Path E:\ConsolidationService\Web.config -DestinationPath E:\ConsolidationService\Archive\archive.zip
+
 
 
 
