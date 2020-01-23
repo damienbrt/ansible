@@ -3,8 +3,6 @@
   remote_user: root
   vars:
     date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"    
-  with_items:
-    - E:\ConsolidationService
 
   tasks:
     - name: test connection
@@ -12,18 +10,13 @@
 #Archive ConsolidationService
     - name: Copy Archive.zip in Depot1\Archive
       win_copy:
-        src: {{ foo }}\Archive.zip
+        src: E:\ConsolidationService\Archive.zip
         dest: E:\Depot1\Archive\Archive.zip
         remote_src: yes
 
     - name: Remove Archive.zip in ConsolidationService
       win_file:
-        path: 
-        
-        
-        
-        
-        }}\Archive.zip
+        path: E:\ConsolidationService\Archive.zip
         state: absent
 
     - name: Unzip Archive.zip in Depot1\Archive
@@ -35,7 +28,7 @@
     - name: Zip all file in Depot1\Archive
       win_shell: |
         $compress = @{
-        Path= "{{ foo }}\Web.config", "{{ foo }}", "{{ foo }}\ConsolidationService.log"
+        Path= "E:\ConsolidationService\Web.config", "E:\ConsolidationService\bin", "E:\ConsolidationService\ConsolidationService.log"
         CompressionLevel = "Fastest"
         DestinationPath = "E:\Depot1\Archive\{{ date }}.zip"
         }
@@ -50,7 +43,7 @@
         $compress = @{
         Path= "E:\Depot1\Archive\*"
         CompressionLevel = "Fastest"
-        DestinationPath = "{{ foo }}\Archive.zip"
+        DestinationPath = "E:\ConsolidationService\Archive.zip"
         }
         Compress-Archive @compress
     - name: Remove Depot1\Archive
