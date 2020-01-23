@@ -50,5 +50,10 @@
 
     - name: Remove a file, if present
       win_file:
-        path: E:\Depot1\Archive\*
+        path: E:\Depot1\Archive
         state: absent
+
+    - name: Remove a file, if present
+      win_file:
+        path: E:\Depot1\Archive
+        state: directory
