@@ -8,9 +8,13 @@
     - name: Test connection with windows host
       win_ping:
     - name: Zip Web.config file
-      win_shell: Compress-Archive -Path E:\ConsolidationService\Web.config -DestinationPath E:\ConsolidationService\Archive\{{ date }}.zip
-    - name: Zip Bin file
-      win_shell: Compress-Archive -Path E:\ConsolidationService\bin -DestinationPath E:\ConsolidationService\Archive\{{ date }}.zip
+      win_shell: |
+        $compress = @{
+        Path= "E:\ConsolidationService\Web.config", "E:\ConsolidationService\bin"
+        CompressionLevel = "Fastest"
+        DestinationPath = "E:\ConsolidationService\Archive\test.zip"
+        }
+        Compress-Archive @compress
    
   
 
