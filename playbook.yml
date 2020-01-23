@@ -12,7 +12,7 @@
 #Archive ConsolidationService
     - name: Copy Archive.zip in Depot1\Archive
       win_copy:
-        src: {{ item }}\Archive.zip
+        src: {{ foo }}\Archive.zip
         dest: E:\Depot1\Archive\Archive.zip
         remote_src: yes
 
@@ -35,7 +35,7 @@
     - name: Zip all file in Depot1\Archive
       win_shell: |
         $compress = @{
-        Path= "{{ item }}\Web.config", "{{ item }}", "{{ item }}\ConsolidationService.log"
+        Path= "{{ foo }}\Web.config", "{{ foo }}", "{{ foo }}\ConsolidationService.log"
         CompressionLevel = "Fastest"
         DestinationPath = "E:\Depot1\Archive\{{ date }}.zip"
         }
@@ -50,7 +50,7 @@
         $compress = @{
         Path= "E:\Depot1\Archive\*"
         CompressionLevel = "Fastest"
-        DestinationPath = "{{ item }}\Archive.zip"
+        DestinationPath = "{{ foo }}\Archive.zip"
         }
         Compress-Archive @compress
     - name: Remove Depot1\Archive
