@@ -11,5 +11,5 @@
     - name: Copy a single file
       win_copy:
         src: E:\ConsolidationService\Archive\{{ date }}
-        dest: E:\ConsolidationService\Archive.zip\{{ date }}
+        dest: E:\ConsolidationService\Archive.zip\
         remote_src: yes
