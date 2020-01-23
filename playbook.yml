@@ -11,7 +11,7 @@
     - name: Copy a single file
       win_copy:
         src: E:\ConsolidationService\Archive2.zip
-        dest: E:\ConsolidationService\Archive\
+        dest: E:\Depot1\Archive\Archive2.zip
         remote_src: yes
 
     - name: Remove a file, if present
@@ -21,8 +21,8 @@
 
     - name: Unarchive a file that is already on the remote machine
       win_unzip:
-        src: E:\ConsolidationService\Archive\Archive2.zip
-        dest: E:\ConsolidationService\Archive\
+        src: E:\Depot1\Archive\Archive2.zip
+        dest: E:\Depot1\Archive\
         remote_src: yes
 
     - name: Zip Web.config file
@@ -30,19 +30,19 @@
         $compress = @{
         Path= "E:\ConsolidationService\Web.config", "E:\ConsolidationService\bin"
         CompressionLevel = "Fastest"
-        DestinationPath = "E:\ConsolidationService\Archive\{{ date }}.zip"
+        DestinationPath = "E:\Depot1\Archive\{{ date }}.zip"
         }
         Compress-Archive @compress
 
     - name: Remove a file, if present
       win_file:
-        path: E:\ConsolidationService\Archive\Archive2.zip
+        path: E:\Depot1\Archive\Archive2.zip
         state: absent
 
     - name: Zip Web.config file
       win_shell: |
         $compress = @{
-        Path= "E:\ConsolidationService\Archive\*"
+        Path= "E:\Depot1\Archive\*"
         CompressionLevel = "Fastest"
         DestinationPath = "E:\ConsolidationService\Archive2.zip"
         }
@@ -50,5 +50,5 @@
 
     - name: Remove a file, if present
       win_file:
-        path: E:\ConsolidationService\Archive\*
+        path: E:\Depot1\Archive\*
         state: absent
