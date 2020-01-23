@@ -1,12 +1,14 @@
 ---
 - hosts: windows-server
   remote_user: root
+  vars:
+    date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
 
   tasks:
     - name: test connection
       win_ping:
     - name: Run multi-lined shell commands
-      win_shell: Compress-Archive -Path E:\ConsolidationService\Web.config -DestinationPath E:\ConsolidationService\Archive\archive.zip
+      win_shell: Compress-Archive -Path E:\ConsolidationService\Web.config -DestinationPath E:\ConsolidationService\Archive\{{ date }}.zip
 
 
 
