@@ -12,13 +12,18 @@
 #Archive ConsolidationService
     - name: Copy Archive.zip in Depot1\Archive
       win_copy:
-        src: "{{ item }}"\Archive.zip
+        src: {{ item }}\Archive.zip
         dest: E:\Depot1\Archive\Archive.zip
         remote_src: yes
 
     - name: Remove Archive.zip in ConsolidationService
       win_file:
-        path: {{ item }}\Archive.zip
+        path: 
+        
+        
+        
+        
+        }}\Archive.zip
         state: absent
 
     - name: Unzip Archive.zip in Depot1\Archive
