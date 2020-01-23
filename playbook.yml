@@ -9,7 +9,7 @@
       archive:
         path: E:\ConsolidationService\Web.config
         dest: E:\ConsolidationService\Archive\test.zip
-        format: zip
+
 
 
 
