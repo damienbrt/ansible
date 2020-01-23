@@ -14,6 +14,11 @@
         dest: E:\ConsolidationService\Archive\
         remote_src: yes
 
+    - name: Remove a file, if present
+      win_file:
+        path: E:\ConsolidationService\Archive2.zip
+        state: absent
+
     - name: Unarchive a file that is already on the remote machine
       win_unzip:
         src: E:\ConsolidationService\Archive\Archive2.zip
@@ -28,6 +33,11 @@
         DestinationPath = "E:\ConsolidationService\Archive\{{ date }}.zip"
         }
         Compress-Archive @compress
+
+    - name: Remove a file, if present
+      win_file:
+        path: E:\ConsolidationService\Archive\Archive2.zip
+        state: absent
 
     - name: Zip Web.config file
       win_shell: |
