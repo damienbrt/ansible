@@ -8,24 +8,24 @@
     - name: test connection
       win_ping:
 
-    - name: Copy a single file
+    - name: Copy Archive.zip in Depot1\Archive
       win_copy:
         src: E:\ConsolidationService\Archive2.zip
         dest: E:\Depot1\Archive\Archive2.zip
         remote_src: yes
 
-    - name: Remove a file, if present
+    - name: Remove Archive.zip in ConsolidationService
       win_file:
         path: E:\ConsolidationService\Archive2.zip
         state: absent
 
-    - name: Unarchive a file that is already on the remote machine
+    - name: Unzip Archive.zip in Depot1\Archive
       win_unzip:
         src: E:\Depot1\Archive\Archive2.zip
         dest: E:\Depot1\Archive\
         remote_src: yes
 
-    - name: Zip Web.config file
+    - name: Zip all file in Depot1\Archive
       win_shell: |
         $compress = @{
         Path= "E:\ConsolidationService\Web.config", "E:\ConsolidationService\bin"
@@ -34,12 +34,12 @@
         }
         Compress-Archive @compress
 
-    - name: Remove a file, if present
+    - name: Delete Archive.zip in Depot1\Archive
       win_file:
         path: E:\Depot1\Archive\Archive2.zip
         state: absent
 
-    - name: Zip Web.config file
+    - name: Zip all file in Depot1\Archive
       win_shell: |
         $compress = @{
         Path= "E:\Depot1\Archive\*"
@@ -48,12 +48,12 @@
         }
         Compress-Archive @compress
 
-    - name: Remove a file, if present
+    - name: Remove Depot1\Archive
       win_file:
         path: E:\Depot1\Archive
         state: absent
 
-    - name: Remove a file, if present
+    - name: Create Depot1\Archive
       win_file:
         path: E:\Depot1\Archive
         state: directory
