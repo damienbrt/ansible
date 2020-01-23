@@ -42,7 +42,7 @@
     - name: Zip Web.config file
       win_shell: |
         $compress = @{
-        Path= "E:\ConsolidationService\*"
+        Path= "E:\ConsolidationService\Archive\*"
         CompressionLevel = "Fastest"
         DestinationPath = "E:\ConsolidationService\Archive2.zip"
         }
