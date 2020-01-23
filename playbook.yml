@@ -10,8 +10,8 @@
 #Archive ConsolidationService
     - name: Copy Archive.zip in Depot1\Archive
       win_copy:
-        src: E:\"{{ item }}"\Archive.zip
-        dest: E:\Depot1\Archive\"{{ item }}".zip
+        src: E:\{{ item }}\Archive.zip
+        dest: E:\Depot1\Archive\{{ item }}.zip
         remote_src: yes
       with_items:
         - ConsolidationService
