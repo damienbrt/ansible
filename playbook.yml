@@ -9,7 +9,7 @@
     - name: Create a bz2 archive of multiple files, rooted at /path
       archive:
         path: E:\ConsolidationService\web.config
-        dest: E:\ConsolidationService\Archive.zip\test
+        dest: E:\ConsolidationService\Archive.zip\test.zip\web.config
         format: zip
 
 
