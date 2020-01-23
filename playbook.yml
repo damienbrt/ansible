@@ -7,7 +7,7 @@
   tasks:
     - name: test connection
       win_ping:
-
+#Archive ConsolidationService
     - name: Copy Archive.zip in Depot1\Archive
       win_copy:
         src: E:\ConsolidationService\Archive.zip
@@ -33,7 +33,6 @@
         DestinationPath = "E:\Depot1\Archive\{{ date }}.zip"
         }
         Compress-Archive @compress
-
     - name: Delete Archive.zip in Depot1\Archive
       win_file:
         path: E:\Depot1\Archive\Archive.zip
@@ -47,7 +46,6 @@
         DestinationPath = "E:\ConsolidationService\Archive.zip"
         }
         Compress-Archive @compress
-
     - name: Remove Depot1\Archive
       win_file:
         path: E:\Depot1\Archive
@@ -57,3 +55,4 @@
       win_file:
         path: E:\Depot1\Archive
         state: directory
+##################################
