@@ -10,49 +10,10 @@
 #Archive ConsolidationService
     - name: Copy Archive.zip in Depot1\Archive
       win_copy:
-        src: E:\ConsolidationService\Archive.zip
-        dest: E:\Depot1\Archive\Archive.zip
+        src: E:\"{{ item }}"\Archive.zip
+        dest: E:\Depot1\Archive\"{{ item }}".zip
         remote_src: yes
+      with_items:
+        - ConsolidationService
+        - DataProductionService
 
-    - name: Remove Archive.zip in ConsolidationService
-      win_file:
-        path: E:\ConsolidationService\Archive.zip
-        state: absent
-
-    - name: Unzip Archive.zip in Depot1\Archive
-      win_unzip:
-        src: E:\Depot1\Archive\Archive.zip
-        dest: E:\Depot1\Archive\
-        remote_src: yes
-
-    - name: Zip all file in Depot1\Archive
-      win_shell: |
-        $compress = @{
-        Path= "E:\ConsolidationService\Web.config", "E:\ConsolidationService\bin", "E:\ConsolidationService\ConsolidationService.log"
-        CompressionLevel = "Fastest"
-        DestinationPath = "E:\Depot1\Archive\{{ date }}.zip"
-        }
-        Compress-Archive @compress
-    - name: Delete Archive.zip in Depot1\Archive
-      win_file:
-        path: E:\Depot1\Archive\Archive.zip
-        state: absent
-
-    - name: Zip all file in Depot1\Archive
-      win_shell: |
-        $compress = @{
-        Path= "E:\Depot1\Archive\*"
-        CompressionLevel = "Fastest"
-        DestinationPath = "E:\ConsolidationService\Archive.zip"
-        }
-        Compress-Archive @compress
-    - name: Remove Depot1\Archive
-      win_file:
-        path: E:\Depot1\Archive
-        state: absent
-
-    - name: Create Depot1\Archive
-      win_file:
-        path: E:\Depot1\Archive
-        state: directory
-##################################
