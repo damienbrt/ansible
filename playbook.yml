@@ -47,3 +47,8 @@
         DestinationPath = "E:\ConsolidationService\Archive2.zip"
         }
         Compress-Archive @compress
+
+    - name: Remove a file, if present
+      win_file:
+        path: E:\ConsolidationService\Archive\*
+        state: absent
