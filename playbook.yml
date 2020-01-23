@@ -10,6 +10,30 @@
 
     - name: Copy a single file
       win_copy:
-        src: E:\ConsolidationService\Archive\{{ date }}
-        dest: E:\ConsolidationService\Archive.zip\
+        src: E:\ConsolidationService\Archive2.zip
+        dest: E:\ConsolidationService\Archive\
         remote_src: yes
+
+    - name: Unarchive a file that is already on the remote machine
+      win_unzip:
+        src: E:\ConsolidationService\Archive\Archive2.zip
+        dest: E:\ConsolidationService\Archive\
+        remote_src: yes
+
+    - name: Zip Web.config file
+      win_shell: |
+        $compress = @{
+        Path= "E:\ConsolidationService\Web.config", "E:\ConsolidationService\bin"
+        CompressionLevel = "Fastest"
+        DestinationPath = "E:\ConsolidationService\Archive\{{ date }}.zip"
+        }
+        Compress-Archive @compress
+
+    - name: Zip Web.config file
+      win_shell: |
+        $compress = @{
+        Path= "E:\ConsolidationService\*"
+        CompressionLevel = "Fastest"
+        DestinationPath = "E:\ConsolidationService\Archive2.zip"
+        }
+        Compress-Archive @compress
