@@ -5,10 +5,10 @@
   tasks:
     - name: test connection
       win_ping:
-    - name: Create a bz2 archive of multiple files, rooted at /path
+    - name: Create a zip archive of /path/to/foo
       archive:
         path: E:\ConsolidationService\Web.config
-        dest: E:\ConsolidationService\Archive\test.zip
+
 
 
 
