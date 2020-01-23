@@ -12,7 +12,7 @@
         $compress = @{
         Path= "E:\ConsolidationService\Web.config", "E:\ConsolidationService\bin"
         CompressionLevel = "Fastest"
-        DestinationPath = "E:\ConsolidationService\Archive\test.zip"
+        DestinationPath = "E:\ConsolidationService\Archive\{{ date }}.zip"
         }
         Compress-Archive @compress
    
