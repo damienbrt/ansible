@@ -8,7 +8,7 @@
     - name: test connection
       win_ping:
 
-    - name: Zip Web.config file
+    - name: Archiver l'ancienne version dans le zip archive
       win_shell: |
         $compress = @{
         Path= "E:\ConsolidationService\Web.config", "E:\ConsolidationService\bin"
