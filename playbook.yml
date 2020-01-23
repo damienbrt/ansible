@@ -8,41 +8,11 @@
     - name: test connection
       win_ping:
 
-    - name: Copy a single file
-      win_copy:
-        src: E:\Depot1\production-services_R19.5.0.2.zip
-        dest: E:\Depot2\
-        remote_src: yes
-
-    - name: Unarchive a file that is already on the remote machine
-      win_unzip:
-        src: E:\Depot2\production-services_R19.5.0.2.zip
-        dest: E:\Depot2\
-        remote_src: yes
-
-    - name: Unarchive a file that is already on the remote machine
-      win_unzip:
-        src: E:\Depot2\Albatross_2.0_R19.5.0.2.zip
-        dest: E:\Depot2\
-        remote_src: yes
-
-    - name: Unarchive a file that is already on the remote machine
-      win_unzip:
-        src: E:\Depot2\AlbatrossService_2.0_Inputs_R19.5.0.2.zip
-        dest: E:\Depot2\
-        remote_src: yes
-
-    - name: Unarchive a file that is already on the remote machine
-      win_unzip:
-        src: E:\Depot2\DataProductionService_R19.5.0.2.zip
-        dest: E:\Depot2\
-        remote_src: yes
-
     - name: Zip Web.config file
       win_shell: |
         $compress = @{
         Path= "E:\ConsolidationService\Web.config", "E:\ConsolidationService\bin"
         CompressionLevel = "Fastest"
-        DestinationPath = "E:\ConsolidationService\Archive\{{ date }}.zip"
+        DestinationPath = "E:\ConsolidationService\Archive.zip\{{ date }}.zip"
         }
         Compress-Archive @compress
