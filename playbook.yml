@@ -5,12 +5,14 @@
     date: "{{ lookup('pipe', 'date +%Y%m%d') }}"
 
   tasks:
-    - name: test connection
+    - name: Test connection with windows host
       win_ping:
-    - name: Run multi-lined shell commands
+    - name: Zip Web.config file
       win_shell: Compress-Archive -Path E:\ConsolidationService\Web.config -DestinationPath E:\ConsolidationService\Archive\{{ date }}.zip
-
-
+    - name: Zip Bin file
+      win_shell: Compress-Archive -Path E:\ConsolidationService\bin -DestinationPath E:\ConsolidationService\Archive\{{ date }}.zip
+   
+  
 
 
 
