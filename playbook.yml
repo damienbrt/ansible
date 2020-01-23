@@ -1,17 +1,15 @@
 ---
 - hosts: windows-server
   remote_user: root
-  vars:
-    date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
+
   tasks:
     - name: test connection
       win_ping:
     - name: Create a bz2 archive of multiple files, rooted at /path
       archive:
         path: E:\ConsolidationService\web.config
-        dest: E:\ConsolidationService\Archive\
+        dest: E:\ConsolidationService\Archive\test.zip
         format: zip
-
 
 
 
