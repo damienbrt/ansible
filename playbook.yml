@@ -5,9 +5,11 @@
   tasks:
     - name: test connection
       win_ping:
-    - name: Create a zip archive of /path/to/foo
-      archive:
-        path: E:\ConsolidationService\Web.config
+    - name: zip a directory
+      win_zip:
+        src:  E:\ConsolidationService\Web.config
+        dest:  E:\ConsolidationService\Archive\test.zip
+        creates: E:\ConsolidationService\Archive\test.zip
 
 
 
