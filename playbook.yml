@@ -2,7 +2,7 @@
 - hosts: windows-server
   remote_user: root
   vars:
-    date: "{{ lookup('pipe', 'date +%Y%m%d') }}"    
+    date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"    
 
   tasks:
     - name: test connection
