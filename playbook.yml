@@ -3,10 +3,9 @@
   remote_user: root
   vars:
     date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
-
-  chemin: 
-    - ConsolidationService
-    - ConversionService
+    chemin: 
+      - ConsolidationService
+      - ConversionService
 
   tasks:
     - name: test connection
@@ -18,5 +17,3 @@
         dest: E:\Depot1\Archive\{{ item }}.zip
         remote_src: yes
         with_items: chemin
-
-
