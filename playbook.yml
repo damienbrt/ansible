@@ -2,9 +2,11 @@
 - hosts: windows-server
   remote_user: root
   vars:
-    date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"    
-    chemin: 
+    date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
+
+  chemin: 
       - ConsolidationService
+      - ConversionService
 
   tasks:
     - name: test connection
