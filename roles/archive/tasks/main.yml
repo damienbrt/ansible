@@ -4,4 +4,4 @@
     src: E:\{{ item }}\Archive.zip
     dest: E:\Depot1\Archive\{{ item }}.zip
     remote_src: yes
-  with_items: "{{ chemins }}"
+  with_items: "{{ webservice }}"
