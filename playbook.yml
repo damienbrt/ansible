@@ -3,9 +3,10 @@
   remote_user: root
   vars:
     date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
-    chemin:
-      - ConsolidationService
-      - ConversionService
+    
+      chemin:
+        - ConsolidationService
+        - ConversionService
   tasks:
     - name: test connection
       win_ping:
