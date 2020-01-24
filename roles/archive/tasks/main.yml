@@ -5,3 +5,51 @@
     dest: E:\Depot1\Archive\{{ item }}.zip
     remote_src: yes
   with_items: "{{ webservice }}"
+
+- name: Remove Archive.zip in {{ item }}
+  win_file:
+    path: E:\{{ item }}\Archive.zip
+    state: absent
+  with_items: "{{ webservice }}"
+
+- name: Unzip Archive.zip in Depot1\Archive
+  win_unzip:
+    src: E:\Depot1\Archive\{{ item }}.zip
+    dest: E:\Depot1\Archive\
+    remote_src: yes
+  with_items: "{{ webservice }}"
+
+- name: Zip all file in Depot1\Archive
+  win_shell: |
+    $compress = @{
+    Path= "E:\{{ item }}\Web.config", "E:\{{ item }}\bin", "E:\{{ item }}\{{ item }}.log"
+    CompressionLevel = "Fastest"
+    DestinationPath = "E:\Depot1\Archive\{{ date }}.zip"
+    }
+    Compress-Archive @compress
+  with_items: "{{ webservice }}"
+
+- name: Delete Archive.zip in Depot1\Archive
+  win_file:
+    path: E:\Depot1\Archive\{{ item }}.zip
+    state: absent
+  with_items: "{{ webservice }}"
+
+- name: Zip all file in Depot1\Archive
+  win_shell: |
+    $compress = @{
+    Path= "E:\Depot1\Archive\*"
+    CompressionLevel = "Fastest"
+    DestinationPath = "E:\{{ item }}\Archive.zip"
+    }
+    Compress-Archive @compress
+
+- name: Remove Depot1\Archive
+  win_file:
+    path: E:\Depot1\Archive
+    state: absent
+
+- name: Create Depot1\Archive
+  win_file:
+    path: E:\Depot1\Archive
+    state: directory
