@@ -1,10 +1,10 @@
 ---
 - hosts: windows-server
   remote_user: root
-  vars:
-    cheminn:
-      - ConsolidationService
-      - ConversionService
+  cheminn:
+    - ConsolidationService
+    - ConversionService
+
   tasks:
     - name: test connection
       win_ping:
