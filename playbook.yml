@@ -2,8 +2,7 @@
 - hosts: windows-server
   remote_user: root
   vars:
-    date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
-    chemin:
+    cheminn:
       - ConsolidationService
       - ConversionService
   tasks:
@@ -15,4 +14,4 @@
         src: E:\"{{ item }}"\Archive.zip
         dest: E:\Depot1\Archive\"{{ item }}".zip
         remote_src: yes
-        with_items: "{{ chemin }}"
+        with_items: "{{ cheminn }}"
