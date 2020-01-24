@@ -49,8 +49,10 @@
     DestinationPath = "E:\{{ item }}\Archive.zip"
     }
     Compress-Archive @compress
+    with_items: "{{ webservice }}"
 
 - name: Remove Depot1\Archive\{{ item }}
   win_file:
     path: E:\Depot1\Archive
     state: absent
+    with_items: "{{ webservice }}"
