@@ -5,5 +5,5 @@
   tasks:
     - name: Download earthrise.jpg to specified path
       win_get_url:
-        url: https://image.shutterstock.com/image-photo/colorful-flower-on-dark-tropical-260nw-721703848.jpg
+        url: https://artifactory.navblue.tech/artifactory/data-plus/Production-Services/production-services_R19.5.0.2.zip
         dest: E:\Depot1\Archive
