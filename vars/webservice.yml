@@ -1,0 +1,6 @@
+---
+- vars:
+  - chemins:
+    - ConsolidationService
+    - ConversionService
+  - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
