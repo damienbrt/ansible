@@ -3,7 +3,7 @@
   remote_user: root
   vars:
     - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
-    - chemins:
+    - webservice:
       - ConsolidationService
       - ConversionService
 
