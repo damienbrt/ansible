@@ -8,7 +8,7 @@
   tasks:
     - name: test connection
       win_ping:
-#Archive ConsolidationService
+
     - name: Copy Archive.zip in Depot1\Archive
       win_copy:
         src: E:\{{ item }}\Archive.zip
