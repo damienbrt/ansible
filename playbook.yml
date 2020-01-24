@@ -1,19 +1,9 @@
 ---
 - hosts: windows-server
   remote_user: root
-  vars:
-    date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
-    chemin:
-      - ConsolidationService
-      - ConversionService
 
   tasks:
-    - name: test connection
-      win_ping:
-#Archive ConsolidationService
-    - name: Copy Archive.zip in Depot1\Archive
-      win_copy:
-        src: E:\{{ item }}\Archive.zip
-        dest: E:\Depot1\Archive\{{ item }}.zip
-        remote_src: yes
-        with_items: chemin
+    - name: Download earthrise.jpg to specified path
+      win_get_url:
+        url: https://image.shutterstock.com/image-photo/colorful-flower-on-dark-tropical-260nw-721703848.jpg
+        dest: E:\Depot1\Archive
