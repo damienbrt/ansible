@@ -1,10 +1,18 @@
 ---
 - hosts: windows-server
   remote_user: root
-
+  vars:
+    date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
+    chemin:
+      - ConsolidationService
+      - ConversionService
   tasks:
-    - name: Download earthrise.jpg to specified path
-      win_get_url:
-        url: https://artifactory.navblue.tech/artifactory/data-plus/Production-Services/production-services_R19.5.0.2.zip
-        dest: E:\Depot1\Archive
-        timeout: 120
+    - name: test connection
+      win_ping:
+#Archive ConsolidationService
+    - name: Copy Archive.zip in Depot1\Archive
+      win_copy:
+        src: E:\{{ item }}\Archive.zip
+        dest: E:\Depot1\Archive\{{ item }}.zip
+        remote_src: yes
+        with_items: chemin
