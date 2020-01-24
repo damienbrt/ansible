@@ -2,17 +2,16 @@
 - hosts: windows-server
   remote_user: root
   vars:
-    cheminn:
+    chemins:
       - ConsolidationService
       - ConversionService
-
   tasks:
     - name: test connection
       win_ping:
 #Archive ConsolidationService
     - name: Copy Archive.zip in Depot1\Archive
       win_copy:
-        src: E:\"{{ item }}"\Archive.zip
-        dest: E:\Depot1\Archive\"{{ item }}".zip
+        src: E:\{{ item }}\Archive.zip
+        dest: E:\Depot1\Archive\{{ item }}.zip
         remote_src: yes
-        with_items: "{{ cheminn }}"
+        with_items: "{{ chemins }}"
