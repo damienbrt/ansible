@@ -4,18 +4,8 @@
   vars:
     - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
     - webservice:
+      - ConsolidationService
       - ConversionService
 
   roles:
     - archive
-
-- hosts: windows-server
-  remote_user: root
-  vars:
-    - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
-    - webservice:
-      - ConsolidationService
-
-  roles:
-    - archive
-
