@@ -1,4 +1,0 @@
-  date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
-  webservice:
-    - ConsolidationService
-    - ConversionService
