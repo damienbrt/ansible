@@ -1,5 +1,5 @@
 ---
 - name: Copy a single file
   win_copy:
-    src: C:\Users\dbarthe\Downloads\a.txt
+    src: host.yml
     dest: E:\Depot1\
