@@ -3,3 +3,7 @@
   get_url: url=https://artifactory.navblue.tech/artifactory/data-plus/Production-Services/production-services_R19.5.0.2.zip dest=depot/
   delegate_to: localhost
 
+- name: Copy file
+  copy:
+    src: depot/production-services_R19.5.0.2.zip
+    dest: E:\Depot1
