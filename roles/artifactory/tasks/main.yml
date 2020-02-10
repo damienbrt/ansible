@@ -1,5 +1,5 @@
 ---
 - name: Copy a single file
   win_copy:
-    src: C:\Test\a.txt
-    dest: E:\Depot1
+    src: C:\Users\dbarthe\Downloads\a.txt
+    dest: E:\Depot1\
