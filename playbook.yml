@@ -8,4 +8,4 @@
       - ConversionService
 
   roles:
-    - archive
+    - artifactory
