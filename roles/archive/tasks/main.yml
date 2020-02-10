@@ -3,7 +3,7 @@
   win_file:
     path: E:\Depot1\Archive\{{ item }}
     state: directory
-    with_items: "{{ webservice }}"
+  with_items: "{{ webservice }}"
 
 - name: Copy Archive.zip in Depot1\Archive
   win_copy:
@@ -49,10 +49,10 @@
     DestinationPath = "E:\{{ item }}\Archive.zip"
     }
     Compress-Archive @compress
-    with_items: "{{ webservice }}"
+  with_items: "{{ webservice }}"
 
 - name: Remove Depot1\Archive\{{ item }}
   win_file:
     path: E:\Depot1\Archive
     state: absent
-    with_items: "{{ webservice }}"
+  with_items: "{{ webservice }}"
