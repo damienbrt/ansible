@@ -1,11 +1,7 @@
 ---
 - hosts: windows-server
   remote_user: root
-  vars:
-    - webservice:
-      - ConsolidationService
-      - ConversionService
-    - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
+  vars_files: "variables.yml"
 
   roles:
     - archive
