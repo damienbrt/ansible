@@ -21,7 +21,7 @@
 - name: Unzip Archive.zip in Depot1\Archive
   win_unzip:
     src: E:\Depot1\Archive\{{ item }}\{{ item }}.zip
-    dest: E:\Depot1\Archive\
+    dest: E:\Depot1\Archive\{{ item }}
     remote_src: yes
   with_items: "{{ webservice }}"
 
