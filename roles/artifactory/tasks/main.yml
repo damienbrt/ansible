@@ -1,13 +1,13 @@
 ---
 - name: Download artifactory on local
-  get_url: url=https://artifactory.navblue.tech/artifactory/data-plus/Production-Services/production-services_R19.5.0.2.zip dest=depot/
+  get_url: url=https://artifactory.navblue.tech/artifactory/data-plus/Production-Services/{{ url_artifactory }} dest=depot/
   delegate_to: localhost
 
 - name: Copy file and paste on remote host
   win_copy:
-    src: depot/production-services_R19.5.0.2.zip
+    src: depot/{{ url_artifactory }}
     dest: E:\Depot1\
 
 - name: Remove file in depot local
-  file: path=depot/production-services_R19.5.0.2.zip state=absent
+  file: path=depot/{{ url_artifactory }} state=absent
   delegate_to: localhost
