@@ -3,8 +3,4 @@
   win_copy:
     src: C:\Test
     dest: E:\Depot1
-    
-- name: Download artifactory
-  win_get_url: https://artifactory.navblue.tech/artifactory/data-plus/Production-Services/production-services_R19.5.0.2.zip
-    dest: C:\Test
-    delegate_to: 127.0.0.1
+
