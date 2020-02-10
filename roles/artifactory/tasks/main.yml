@@ -4,6 +4,6 @@
   delegate_to: localhost
 
 - name: Copy file
-  copy:
+  win_copy:
     src: depot/production-services_R19.5.0.2.zip
     dest: E:\Depot1
