@@ -7,3 +7,7 @@
   win_copy:
     src: depot/production-services_R19.5.0.2.zip
     dest: E:\Depot1\
+
+- name: Remove file in depot local
+  file: path=depot/* state=absent
+  delegate_to: localhost
