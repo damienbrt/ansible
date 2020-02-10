@@ -1,5 +1,5 @@
 ---
 - name: Copy a single file
   win_copy:
-    src: host.yml
+    src: hosts.yml
     dest: E:\Depot1\
