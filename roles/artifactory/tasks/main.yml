@@ -1,5 +1,7 @@
 ---
 - name: Copy a single file
-  win_copy:
-    src: hosts.yml
-    dest: E:\Depot1\
+- name: Download artifactory
+  get_url:
+    url: https://artifactory.navblue.tech/artifactory/data-plus/Production-Services/production-services_R19.5.0.2.zip
+    dest: E:\Depot1
+    delegate_to: 127.0.0.1
