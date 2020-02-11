@@ -1,0 +1,8 @@
+---
+- name: Delete old web config
+  win_shell: Get-ChildItem -Path "E:\{{ item }}\{{ webconfig }}" | Remove-Item
+  with_items: "{{ webservice }}"
+
+- name: Copy new web config
+  win_shell: Get-ChildItem -Path "E:\Depot\Artifactory\{{ item }}\{{ webconfig }}" | Copy-Item -Destination E:\{{ item }}\{{ webconfig }}
+  with_items: "{{ webservice }}"
