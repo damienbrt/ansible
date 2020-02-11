@@ -1,15 +1,11 @@
 ---
 - name: Unzip 
   win_unzip:
-    src: E:\Depot\Archive\*
+    src: E:\Depot\Archive\{{ url_artifactory }}
     dest: E:\Depot\Archive\
     remote_src: yes
+    recurse: yes
 
-- name: Unzip 
-  win_unzip:
-    src: E:\Depot\Archive\*
-    dest: E:\Depot\Archive\
-    remote_src: yes
 
 #- name: Copy bin file
 #  win_copy:
