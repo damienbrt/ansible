@@ -2,7 +2,7 @@
 - name: Copy bin file
   win_copy:
     src: E:\Depot\Artifactory\{{ webservice }}\bin
-    dest: E:\Depot\
+    dest: E:\Depot
     remote_src: yes
   with_items: "{{ webservice }}"
 
