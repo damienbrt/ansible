@@ -1,10 +1,4 @@
 ---
-- name: Unzip 
-  win_unzip:
-    src: E:\Depot\Artifactory\{{ url_artifactory }}
-    dest: E:\Depot\Artifactory\
-    recurse: yes
-
 #- name: Copy bin file
 #  win_copy:
 #    src: E:\Depot\{{ url_artifactory }}\Albatross_2.0_R19.5.0.2.zip\{{ webservice }}\bin\

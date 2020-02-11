@@ -1,5 +1,5 @@
 ---
-- name: Create a directory if it does not exist
+- name: Create directory Artifactory
   win_file:
     path: E:\Depot\Artifactory
     state: directory
@@ -16,3 +16,9 @@
 - name: Remove file in depot local
   file: path=depot/{{ url_artifactory }} state=absent
   delegate_to: localhost
+
+- name: Unzip Artifactory
+  win_unzip:
+    src: E:\Depot\Artifactory\{{ url_artifactory }}
+    dest: E:\Depot\Artifactory\
+    recurse: yes
