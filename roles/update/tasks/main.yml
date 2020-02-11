@@ -2,12 +2,12 @@
 - name: Find files in path
   win_find:
     paths: E:\Depot\Artifactory\ConsolidationService\bin\
-    patterns: [ '*.dll']
+    patterns: ['*.dll']
     register: files_to_copy
 
 - name: Copy bin file
   win_copy:
-    src: "{{ item }}"
+    src: {{ item }}
     dest: E:\Depot\
     remote_src: yes
-  with_items: files_to_copy.results
+  with_items: {{ files_to_copy.results }}
