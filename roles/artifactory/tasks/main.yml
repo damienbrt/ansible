@@ -1,4 +1,9 @@
 ---
+- name: Create a directory if it does not exist
+  win_file:
+    path: E:\Depot\Artifactory
+    state: directory
+
 - name: Download artifactory on local
   get_url: url=https://artifactory.navblue.tech/artifactory/data-plus/Production-Services/{{ url_artifactory }} dest=depot/
   delegate_to: localhost
@@ -6,7 +11,7 @@
 - name: Copy file and paste on remote host
   win_copy:
     src: depot/{{ url_artifactory }}
-    dest: E:\Depot\
+    dest: E:\Depot\Artifactory\
 
 - name: Remove file in depot local
   file: path=depot/{{ url_artifactory }} state=absent
