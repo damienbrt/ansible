@@ -5,9 +5,7 @@
     - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
     - webservice:
       - ConsolidationService
-      - ConversionService
     - url_artifactory: production-services_R19.5.0.2.zip
 
   roles:
-    - artifactory
-    - archive
+    - update
