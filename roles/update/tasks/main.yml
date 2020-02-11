@@ -1,8 +1,9 @@
 ---
 - name: Unzip 
   win_unzip:
-    src: E:\Depot\*
+    src: E:\Depot\{{ url_artifactory }}
     dest: E:\Depot\
+    recurse: yes
 
 #- name: Copy bin file
 #  win_copy:
