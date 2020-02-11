@@ -4,6 +4,7 @@
     src: E:\Depot\{{ url_artifactory }}
     dest: E:\Depot\
     recurse: yes
+    delete_archive: yes
 
 #- name: Copy bin file
 #  win_copy:
