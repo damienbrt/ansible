@@ -1,8 +1,8 @@
 ---
 - name: Unzip 
   win_unzip:
-    src: E:\Depot\Archive\{{ url_artifactory }}
-    dest: E:\Depot\Archive\
+    src: E:\Depot\{{ url_artifactory }}
+    dest: E:\Depot\
     remote_src: yes
     recurse: yes
 
