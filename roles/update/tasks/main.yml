@@ -3,6 +3,7 @@
   win_psmodule:
     name: Pscx
     state: present
+    allow_clobber: yes
 
 #- name: Unzip 
 #  win_unzip:
