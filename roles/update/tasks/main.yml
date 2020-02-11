@@ -1,7 +1,7 @@
 ---
 - name: Unzip 
   win_unzip:
-    src: E:\Depot\
+    src: E:\Depot\*
     dest: E:\Depot\
 
 #- name: Copy bin file
