@@ -8,8 +8,11 @@
     - url_artifactory: production-services_R19.5.0.2.zip
 
   roles:
+    - role: artifactory
+    - role: archive
+    - role: update_dll
     - role: update_webconfig
       vars:
-        webconfig: web.config
+        webconfig: Web.config
         webservice:
-          - ConversionService
+          - ConsolidationService
