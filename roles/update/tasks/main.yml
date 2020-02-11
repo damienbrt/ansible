@@ -1,7 +1,7 @@
 ---
 - name: Copy bin file
   win_copy:
-    src: E:\Depot\Artifactory\{{ webservice }}\bin\*.dll
+    src: E:\Depot\Artifactory\{{ webservice }}\bin\A424_15DataModel.dll
     dest: E:\Depot
     remote_src: yes
   with_items: "{{ webservice }}"
