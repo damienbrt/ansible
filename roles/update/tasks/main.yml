@@ -1,9 +1,14 @@
 ---
-- name: Unzip 
-  win_unzip:
-    src: E:\Depot\{{ url_artifactory }}
-    dest: E:\Depot\
-    recurse: yes
+- name: Create a directory if it does not exist
+  file:
+    path: E:\Depot\Artifactory
+    state: directory
+
+#- name: Unzip 
+#  win_unzip:
+#    src: E:\Depot\Artifactory\{{ url_artifactory }}
+#    dest: E:\Depot\Artifactory\
+#    recurse: yes
 
 #- name: Copy bin file
 #  win_copy:
