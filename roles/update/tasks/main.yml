@@ -3,13 +3,6 @@
   win_unzip:
     src: E:\Depot\
     dest: E:\Depot\
-    delete_archive: yes
-
-- name: Unzip 
-  win_unzip:
-    src: E:\Depot\
-    dest: E:\Depot\
-    delete_archive: yes
 
 #- name: Copy bin file
 #  win_copy:
