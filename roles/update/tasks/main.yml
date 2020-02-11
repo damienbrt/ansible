@@ -1,13 +1,13 @@
 ---
 - name: Unzip 
   win_unzip:
-    src: E:\Depot\Archive\
+    src: E:\Depot\Archive\*
     dest: E:\Depot\Archive\
     remote_src: yes
 
 - name: Unzip 
   win_unzip:
-    src: E:\Depot\Archive\
+    src: E:\Depot\Archive\*
     dest: E:\Depot\Archive\
     remote_src: yes
 
