@@ -6,7 +6,7 @@
 - name: Copy file and paste on remote host
   win_copy:
     src: depot/{{ url_artifactory }}
-    dest: E:\Depot1\
+    dest: E:\Depot\
 
 - name: Remove file in depot local
   file: path=depot/{{ url_artifactory }} state=absent

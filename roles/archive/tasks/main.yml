@@ -1,14 +1,14 @@
 ---
-- name: Create Depot1\Archive
+- name: Create Depot\Archive
   win_file:
-    path: E:\Depot1\Archive\{{ item }}
+    path: E:\Depot\Archive\{{ item }}
     state: directory
   with_items: "{{ webservice }}"
 
-- name: Copy Archive.zip in Depot1\Archive
+- name: Copy Archive.zip in Depot\Archive
   win_copy:
     src: E:\{{ item }}\Archive.zip
-    dest: E:\Depot1\Archive\{{ item }}\{{ item }}.zip
+    dest: E:\Depot\Archive\{{ item }}\{{ item }}.zip
     remote_src: yes
   with_items: "{{ webservice }}"
 
@@ -18,41 +18,41 @@
     state: absent
   with_items: "{{ webservice }}"
 
-- name: Unzip Archive.zip in Depot1\Archive
+- name: Unzip Archive.zip in Depot\Archive
   win_unzip:
-    src: E:\Depot1\Archive\{{ item }}\{{ item }}.zip
-    dest: E:\Depot1\Archive\{{ item }}
+    src: E:\Depot\Archive\{{ item }}\{{ item }}.zip
+    dest: E:\Depot\Archive\{{ item }}
     remote_src: yes
   with_items: "{{ webservice }}"
 
-- name: Zip all file in Depot1\Archive
+- name: Zip all file in Depot\Archive
   win_shell: |
     $compress = @{
     Path= "E:\{{ item }}\Web.config", "E:\{{ item }}\bin", "E:\{{ item }}\{{ item }}.log"
     CompressionLevel = "Fastest"
-    DestinationPath = "E:\Depot1\Archive\{{ item }}\{{ date }}.zip"
+    DestinationPath = "E:\Depot\Archive\{{ item }}\{{ date }}.zip"
     }
     Compress-Archive @compress
   with_items: "{{ webservice }}"
 
-- name: Delete Archive.zip in Depot1\Archive
+- name: Delete Archive.zip in Depot\Archive
   win_file:
-    path: E:\Depot1\Archive\{{ item }}\{{ item }}.zip
+    path: E:\Depot\Archive\{{ item }}\{{ item }}.zip
     state: absent
   with_items: "{{ webservice }}"
 
-- name: Zip all file in Depot1\Archive
+- name: Zip all file in Depot\Archive
   win_shell: |
     $compress = @{
-    Path= "E:\Depot1\Archive\{{ item }}\*"
+    Path= "E:\Depot\Archive\{{ item }}\*"
     CompressionLevel = "Fastest"
     DestinationPath = "E:\{{ item }}\Archive.zip"
     }
     Compress-Archive @compress
   with_items: "{{ webservice }}"
 
-- name: Remove Depot1\Archive\{{ item }}
+- name: Remove Depot\Archive\{{ item }}
   win_file:
-    path: E:\Depot1\Archive
+    path: E:\Depot\Archive
     state: absent
   with_items: "{{ webservice }}"
