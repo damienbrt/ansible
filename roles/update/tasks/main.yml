@@ -1,8 +1,20 @@
 ---
-- name: Copy bin file
-  win_copy:
-    src: E:\Depot\{{ url_artifactory }}\Albatross_2.0_R19.5.0.2.zip\{{ webservice }}\bin\
-    dest: E:\Depot\
+- name: Unzip 
+  win_unzip:
+    src: E:\Depot\Archive\
+    dest: E:\Depot\Archive\
     remote_src: yes
-  with_items: "{{ webservice }}"
+
+- name: Unzip 
+  win_unzip:
+    src: E:\Depot\Archive\
+    dest: E:\Depot\Archive\
+    remote_src: yes
+
+#- name: Copy bin file
+#  win_copy:
+#    src: E:\Depot\{{ url_artifactory }}\Albatross_2.0_R19.5.0.2.zip\{{ webservice }}\bin\
+#    dest: E:\Depot\
+#    remote_src: yes
+#  with_items: "{{ webservice }}"
 
