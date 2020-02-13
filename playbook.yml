@@ -19,5 +19,5 @@
     - url_artifactory: production-services_R19.5.0.2.zip
 
   roles:
-    - role: test_ping
-    - role: update_sql
+    - role: artifactory
+#    - role: update_sql

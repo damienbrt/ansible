@@ -1,4 +1,14 @@
 ---
+- name: Delete directory Depot
+  win_file:
+    path: E:\Depot
+    state: absent
+
+- name: Create directory Depot
+  win_file:
+    path: E:\Depot
+    state: directory
+
 - name: Delete directory Artifactory
   win_file:
     path: E:\Depot\Artifactory
