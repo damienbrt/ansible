@@ -7,8 +7,8 @@
       - ConsolidationService
     - url_artifactory: production-services_R19.5.0.2.zip
 
-  roles:
-    - role: artifactory
+#  roles:
+#    - role: artifactory
 
 - hosts: windows-sql
   remote_user: root
@@ -18,6 +18,12 @@
       - ConsolidationService
     - url_artifactory: production-services_R19.5.0.2.zip
 
-  roles:
-    - role: artifactory
+  tasks:
+  - name: Add a powershell module
+    win_psmodule:
+    name: PSCX
+    state: present
+
+#  roles:
+#    - role: artifactory
 #    - role: update_sql
