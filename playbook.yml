@@ -1,5 +1,5 @@
 ---
-- hosts: windows-server
+- hosts: windows-sql
   remote_user: root
   vars:  
     - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
@@ -7,12 +7,15 @@
       - ConsolidationService
     - url_artifactory: production-services_R19.5.0.2.zip
 
-  roles:
-    - role: artifactory
-    - role: archive
-    - role: update_dll
-    - role: update_webconfig
-      vars:
-        webconfig: Web.config
-        webservice:
-          - ConsolidationService
+  - name: Example from an Ansible Playbook
+    win_ping:
+
+#  roles:
+#    - role: artifactory
+#    - role: archive
+#    - role: update_dll
+#    - role: update_webconfig
+#      vars:
+#        webconfig: Web.config
+#        webservice:
+#          - ConsolidationService

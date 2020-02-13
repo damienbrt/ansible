@@ -51,8 +51,7 @@
     Compress-Archive @compress
   with_items: "{{ webservice }}"
 
-- name: Remove Depot\Archive\{{ item }}
+- name: Remove Depot\Archive
   win_file:
     path: E:\Depot\Archive
     state: absent
-  with_items: "{{ webservice }}"
