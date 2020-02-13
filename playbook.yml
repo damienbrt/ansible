@@ -21,8 +21,9 @@
   tasks:
   - name: Add a powershell module
     win_psmodule:
-    name: PSCX
-    state: present
+      name: Pscx
+      state: present
+      allow_clobber: yes
 
 #  roles:
 #    - role: artifactory
