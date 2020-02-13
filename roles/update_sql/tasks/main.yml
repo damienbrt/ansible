@@ -1,0 +1,4 @@
+---
+- name: Delete old web config
+  win_command: sqlcmd -S VMPMEALBUATDB1\ALBVAL -U Albatross -P Lucem123* -i C:\Users\raphael.barrocas_adm\Desktop\test.sql
+
