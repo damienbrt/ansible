@@ -18,13 +18,6 @@
       - ConsolidationService
     - url_artifactory: production-services_R19.5.0.2.zip
 
-  tasks:
-  - name: Add a powershell module
-    win_psmodule:
-      name: Pscx
-      state: present
-      allow_clobber: yes
-
-  # roles:
-  #   - role: artifactory
-  #   - role: update_sql
+  roles:
+    - role: artifactory
+    # - role: update_sql
