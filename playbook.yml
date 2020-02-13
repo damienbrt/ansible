@@ -9,6 +9,13 @@
 
 #   roles:
 #     - role: artifactory
+#     - role: archive
+#     - role: update_dll
+#     - role: update_webconfig
+#       vars:
+#         webconfig: Web.config
+#         webservice:
+#           - ConsolidationService
 
 - hosts: windows-sql
   remote_user: root
@@ -19,5 +26,9 @@
     - url_artifactory: production-services_R19.5.0.2.zip
 
   roles:
-    - role: artifactory
-    # - role: update_sql
+    # - role: artifactory
+    - role: update_sql
+      vars:
+        file_name:
+          - Db_Qualification_to19.5.0.2
+
