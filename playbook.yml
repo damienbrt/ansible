@@ -7,8 +7,9 @@
       - ConsolidationService
     - url_artifactory: production-services_R19.5.0.2.zip
 
-  - name: Example from an Ansible Playbook
-    win_ping:
+  tasks:
+    - name: test connection
+      win_ping:
 
 #  roles:
 #    - role: artifactory
