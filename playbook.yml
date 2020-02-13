@@ -1,6 +1,4 @@
 ---
-[all:vars]
-- url_artifactory: production-services_R19.5.0.2.zip
 # - hosts: windows-server
 #   remote_user: root
 #   vars:  
