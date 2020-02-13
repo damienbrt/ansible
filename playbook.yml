@@ -1,5 +1,5 @@
 ---
-- hosts: windows-sql
+- hosts: windows-server
   remote_user: root
   vars:  
     - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
@@ -20,3 +20,15 @@
 #        webconfig: Web.config
 #        webservice:
 #          - ConsolidationService
+
+- hosts: windows-sql
+  remote_user: root
+  vars:  
+    - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
+    - webservice:
+      - ConsolidationService
+    - url_artifactory: production-services_R19.5.0.2.zip
+
+  tasks:
+    - name: test connection
+      win_ping:
