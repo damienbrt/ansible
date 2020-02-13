@@ -1,7 +1,4 @@
 ---
-# - name: Update sql
-#   win_command: sqlcmd -S VMPMEALBUATDB1\ALBVAL -U Albatross -P Lucem123* -i C:\Users\raphael.barrocas_adm\Desktop\test.sql
-
 - name: Update sql
   win_command: sqlcmd -S VMPMEALBUATDB1\ALBVAL -U Albatross -P Lucem123* -i E:\Depot\Artifactory\SQL\Deployments\{{ item }}.sql
   with_items: "{{ file_name }}"

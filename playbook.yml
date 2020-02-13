@@ -1,4 +1,6 @@
 ---
+[all:vars]
+- url_artifactory: production-services_R19.5.0.2.zip
 # - hosts: windows-server
 #   remote_user: root
 #   vars:  
@@ -23,12 +25,12 @@
     - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
     - webservice:
       - ConsolidationService
-    - url_artifactory: production-services_R19.5.0.2.zip
+    # - url_artifactory: production-services_R19.5.0.2.zip
 
   roles:
-    # - role: artifactory
-    - role: update_sql
-      vars:
-        file_name:
-          - Db_Qualification_to19.5.0.2
+    - role: artifactory
+    # - role: update_sql
+    #   vars:
+    #     file_name:
+    #       - Db_Qualification_to19.5.0.2
 
