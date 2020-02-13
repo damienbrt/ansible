@@ -8,7 +8,7 @@
     - url_artifactory: production-services_R19.5.0.2.zip
 
   roles:
-    - role: test_ping
+    - role: artifactory
 
 - hosts: windows-sql
   remote_user: root
