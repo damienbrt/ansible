@@ -1,14 +1,14 @@
 ---
-- hosts: windows-server
-  remote_user: root
-  vars:  
-    - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
-    - webservice:
-      - ConsolidationService
-    - url_artifactory: production-services_R19.5.0.2.zip
+# - hosts: windows-server
+#   remote_user: root
+#   vars:  
+#     - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
+#     - webservice:
+#       - ConsolidationService
+#     - url_artifactory: production-services_R19.5.0.2.zip
 
-#  roles:
-#    - role: artifactory
+#   roles:
+#     - role: artifactory
 
 - hosts: windows-sql
   remote_user: root
@@ -25,6 +25,6 @@
       state: present
       allow_clobber: yes
 
-#  roles:
-#    - role: artifactory
-#    - role: update_sql
+  # roles:
+  #   - role: artifactory
+  #   - role: update_sql
