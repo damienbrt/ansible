@@ -2,7 +2,8 @@
 - name: STOP sql server
   win_command: NET STOP {{ server_name }}
 
+- name: Confirm ?
+  win_command: Y
+
 - name: START sql server
   win_command: NET START {{ server_name }}
-
-
