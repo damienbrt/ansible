@@ -2,6 +2,7 @@
 - name: STOP sql server
   win_command: NET STOP {{ server_name }}
   register: result
+  ignore_errors: yes
 
 - name: Confirm ?
   win_command: Y
