@@ -2,7 +2,8 @@
 - name: STOP sql server
   expect:
     win_command: NET STOP {{ server_name }}
-    responses: Y
+    responses:
+      resultat: Y
   # register: result
 
 # - name: Confirm ?
