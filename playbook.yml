@@ -24,11 +24,8 @@
     - webservice:
       - ConsolidationService
     # - url_artifactory: production-services_R19.5.0.2.zip
+    - server_name: MSSQL$ALBVAL
 
   roles:
-    - role: artifactory
-    # - role: update_sql
-    #   vars:
-    #     file_name:
-    #       - Db_Qualification_to19.5.0.2
+    - role: restart_sql_server
 
