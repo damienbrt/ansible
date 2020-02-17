@@ -1,9 +1,10 @@
 ---
 - name: STOP sql server
   expect:
-    win_command: NET STOP {{ server_name }}
-    responses:
-      resultat: Y
+    win_command: "{{ item }}"
+  with_items: 
+    - NET STOP {{ server_name }}
+    - Y
   # register: result
 
 # - name: Confirm ?
