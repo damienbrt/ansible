@@ -2,11 +2,13 @@
 - name: STOP sql server
   win_command: NET STOP {{ server_name }}
   register: result
+  when: result.stdout == "The following services are dependent on the SQL Server (ALBVAL) service.\r\nStopping the SQL Server (ALBVAL) service will also stop these services.\r\n\r\n   SQL Server Agent (ALBVAL)\r\n\r\nDo you want to continue this operation? (Y/N) [N]{{ ":" }} \r\n"
+  win_command: Y
   ignore_errors: yes
 
-- name: Confirm ?
-  win_command: Y
-  when: result.stdout == "The following services are dependent on the SQL Server (ALBVAL) service.\r\nStopping the SQL Server (ALBVAL) service will also stop these services.\r\n\r\n   SQL Server Agent (ALBVAL)\r\n\r\nDo you want to continue this operation? (Y/N) [N]{{ ":" }} \r\n"
+# - name: Confirm ?
+#   win_command: Y
+#   when: result.stdout == "The following services are dependent on the SQL Server (ALBVAL) service.\r\nStopping the SQL Server (ALBVAL) service will also stop these services.\r\n\r\n   SQL Server Agent (ALBVAL)\r\n\r\nDo you want to continue this operation? (Y/N) [N]{{ ":" }} \r\n"
 
 - name: START sql server
   win_command: NET START {{ server_name }}
