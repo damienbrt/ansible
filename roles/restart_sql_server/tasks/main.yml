@@ -1,6 +1,6 @@
 ---
 - name: STOP sql server
-  win_shell: Stop-Service -Name 'MSSQL$ALBVAL' -Force
+  win_shell: Stop-Service -Name 'MSSQL${{ sql_name }}' -Force
 
 - name: START sql server
-  win_shell: Start-Service -Name 'MSSQL$ALBVAL'
+  win_shell: Start-Service -Name 'MSSQL${{ sql_name }}'
