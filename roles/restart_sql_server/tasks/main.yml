@@ -1,9 +1,9 @@
 ---
 - name: STOP sql server
-  win_command: NET STOP {{ server_name }}
-  register: result
-  args:
-    stdin: Y
+  expect:
+    win_command: NET STOP {{ server_name }}
+    responses: Y
+  # register: result
 
 # - name: Confirm ?
 #   win_command: Y
