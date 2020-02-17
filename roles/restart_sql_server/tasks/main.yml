@@ -1,7 +1,6 @@
 ---
 - name: STOP sql server
-  expect:
-    win_command: "{{ item }}"
+  win_command: "{{ item }}"
   with_items: 
     - NET STOP {{ server_name }}
     - Y
