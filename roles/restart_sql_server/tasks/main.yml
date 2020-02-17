@@ -4,6 +4,7 @@
 
 - name: Confirm ?
   win_command: Y
+  when: result.stdout == "Do you want to continue this operation? (Y/N) [N]:"
 
 - name: START sql server
   win_command: NET START {{ server_name }}
