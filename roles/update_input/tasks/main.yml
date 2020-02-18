@@ -1,1 +1,8 @@
 ---
+- name: Delete old inputs
+  win_shell: Get-ChildItem -Path "E:\Work\{{ item }}\Web.config" | Remove-Item
+  with_items: "{{ input }}"
+
+- name: Copy new inputs
+  win_shell: Get-ChildItem -Path "E:\Depot\Artifactory\{{ item }}\{{ webconfig }}" | Copy-Item -Destination E:\{{ item }}\{{ Web.config }}
+  with_items: "{{ input }}"
