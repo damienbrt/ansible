@@ -5,7 +5,7 @@
     Path= "E:\Work\{{ item }}\*"
     Exclude= "Archive"
     CompressionLevel = "Fastest"
-    DestinationPath = "E:\Work\Archive\{{ date }}.zip" 
+    DestinationPath = "E:\Work\{{ item }}\Archive\{{ date }}.zip" 
     }
     Compress-Archive @compress
   with_items: "{{ inputname }}"
