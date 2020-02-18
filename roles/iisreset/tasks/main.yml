@@ -1,0 +1,4 @@
+---
+- name: iisreset
+  win_command: iisreset
+
