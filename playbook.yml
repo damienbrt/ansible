@@ -1,19 +1,19 @@
-# ---
-# - hosts: windows-server
-#   vars:  
-#     - webservice:
-#       - ConsolidationService
-#       - ConversionService
+---
+- hosts: windows-server
+  vars:  
+    - webservice:
+      - ConsolidationService
+      - ConversionService
 
-#   roles:
-#     - role: artifactory
-#     - role: archive
-#     - role: update_dll
-#     - role: update_webconfig
-#       vars:
-#         webconfig: Web.config
-#         webservice:
-#           - ConsolidationService
+  roles:
+    - role: artifactory
+    - role: archive
+    - role: update_dll
+    - role: update_webconfig
+      vars:
+        webconfig: Web.config
+        webservice:
+          - ConsolidationService
 
 # - hosts: windows-sql
 #   vars:  
@@ -30,9 +30,3 @@
 
 #   roles:
 #     - role: iisreset
-
-
-- hosts: windows-server
-
-  roles:
-    - role: test_ping
