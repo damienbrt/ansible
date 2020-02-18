@@ -1,11 +1,9 @@
----
+# ---
 # - hosts: windows-server
-#   remote_user: root
 #   vars:  
-#     - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
 #     - webservice:
 #       - ConsolidationService
-#     - url_artifactory: production-services_R19.5.0.2.zip
+#       - ConversionService
 
 #   roles:
 #     - role: artifactory
@@ -17,24 +15,19 @@
 #         webservice:
 #           - ConsolidationService
 
-# - hosts: windows-sql
-#   remote_user: root
-#   vars:  
-#     - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
-#     - webservice:
-#       - ConsolidationService
-#     # - url_artifactory: production-services_R19.5.0.2.zip
-#     - sql_name: ALBVAL
-
-#   roles:
-#     - role: restart_sql_server
-
-- hosts: windows-server
+- hosts: windows-sql
+  remote_user: root
   vars:  
-    - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
-    - webservice:
-      - ConsolidationService
-    - url_artifactory: production-services_R19.5.0.2.zip
+    - sql_name: ALBVAL
+    # - file_name: 
+    #   - 
 
   roles:
-    - role: iisreset
+    - role: artifactory
+    # - role: update_sql
+    # - role: restart_sql_server
+
+# - hosts: windows-server
+
+#   roles:
+#     - role: iisreset
