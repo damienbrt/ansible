@@ -1,7 +1,7 @@
 # ---
-  - hosts: all
-    vars:
-      - url_artifactory: production-services_R19.5.0.2.zip
+- hosts: all
+  vars:
+    - url_artifactory: production-services_R19.5.0.2.zip
 # - hosts: windows-server
 #   vars:  
 #     - webservice:
