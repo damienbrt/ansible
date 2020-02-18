@@ -27,6 +27,8 @@
     # - role: restart_sql_server
 
 - hosts: windows-server
-
+  vars:  
+    - inputname:
+      - ConsolidationService
   roles:
     - role: archive_input

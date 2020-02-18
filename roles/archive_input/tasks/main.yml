@@ -1,7 +1,15 @@
 ---
-- name: Copy test
-  win_copy:
-    src: E:\Depot\Artifactory\Inputs\Xsd
-    dest: E:\Work\DataProductionService\
-    remote_src: yes
-    backup: yes
+- name: Zip all file in Depot\Archive
+  win_shell: |
+    $compress = @{
+    Path= "E:\Work\{{ item }}\*" -Recurse -Exclude "Archive"
+    CompressionLevel = "Fastest"
+    DestinationPath = "E:\Work\Archive\{{ date }}.zip" 
+    }
+    Compress-Archive @compress
+  with_items: "{{ inputname }}"
+
+
+  # (Get-ChildItem "E:\Depot\Artifactory\Inputs").Name | %{Remove-Item "E:\Work\Test\Test\$($_)" -Force -Recurse -ErrorAction Ignore}
+
+
