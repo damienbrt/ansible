@@ -19,13 +19,13 @@
   remote_user: root
   vars:  
     - sql_name: ALBVAL
-    # - file_name: 
-    #   - 
+    - file_name: 
+      - Db_Qualification_to19.5.0.2
 
   roles:
-    - role: artifactory
-    # - role: update_sql
-    # - role: restart_sql_server
+    # - role: artifactory
+    - role: update_sql
+    - role: restart_sql_server
 
 # - hosts: windows-server
 
