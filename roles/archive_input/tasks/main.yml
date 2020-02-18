@@ -1,7 +1,7 @@
 ---
 - name: Copy test
   win_copy:
-    src: E:\Depot\Artifactory\Inputs\Xsd\
+    src: E:\Depot\Artifactory\Inputs\Xsd
     dest: E:\Work\DataProductionService\
     remote_src: yes
     backup: yes
