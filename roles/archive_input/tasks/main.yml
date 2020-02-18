@@ -3,7 +3,7 @@
   win_shell: |
     $compress = @{
     Path= "E:\Work\{{ item }}\*"
-    Exclude= "Archive"
+    Exclude= "E:\Work\{{ item }}\Archive"
     CompressionLevel = "Fastest"
     DestinationPath = "E:\Work\{{ item }}\Archive\{{ date }}.zip" 
     }
