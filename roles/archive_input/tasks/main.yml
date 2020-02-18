@@ -2,9 +2,10 @@
 - name: Zip all file in Depot\Archive
   win_shell: |
     $compress = @{
-    Path= "E:\Work\{{ item }}\*" -Exclude E:\Work\{{ item }}\Archive
+    Path = "E:\Work\{{ item }}\*"
     CompressionLevel = "Fastest"
     DestinationPath = "E:\Work\{{ item }}\Archive\{{ date }}.zip" 
+    Exclude = "E:\Work\{{ item }}\Archive"
     }
     Compress-Archive @compress
   with_items: "{{ inputname }}"
