@@ -1,7 +1,4 @@
 # ---
-- hosts: all
-  vars:
-    - url_artifactory: production-services_R19.5.0.2.zip
 # - hosts: windows-server
 #   vars:  
 #     - webservice:
@@ -18,15 +15,14 @@
 #         webservice:
 #           - ConsolidationService
 
-- hosts: windows-sql
-  remote_user: root
-  vars:  
-    - sql_name: ALBVAL
-    - file_name: 
-      - Db_Qualification_to19.5.0.2
+# - hosts: windows-sql
+#   vars:  
+#     - sql_name: ALBVAL
+#     - file_name: 
+#       - Db_Qualification_to19.5.0.2
 
-  roles:
-    - role: artifactory
+#   roles:
+#     - role: artifactory
     # - role: update_sql
     # - role: restart_sql_server
 
@@ -34,3 +30,9 @@
 
 #   roles:
 #     - role: iisreset
+
+
+- hosts: windows-server
+
+  roles:
+    - role: test_ping
