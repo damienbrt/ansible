@@ -30,7 +30,6 @@
 #     - role: restart_sql_server
 
 - hosts: windows-server
-  remote_user: root
   vars:  
     - date: "{{ lookup('pipe', 'date +%Y%m%d-%H%M') }}"
     - webservice:
