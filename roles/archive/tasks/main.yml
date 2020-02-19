@@ -1,57 +1,57 @@
 ---
 - name: Create Depot\Archive
   win_file:
-    path: E:\Depot\Archive\{{ item }}
+    path: {{ disk }}Depot\Archive\{{ item }}
     state: directory
   with_items: "{{ webservice }}"
 
 - name: Copy Archive.zip in Depot\Archive
   win_copy:
-    src: E:\{{ item }}\Archive.zip
-    dest: E:\Depot\Archive\{{ item }}\{{ item }}.zip
+    src: {{ disk }}{{ item }}\Archive.zip
+    dest: {{ disk }}Depot\Archive\{{ item }}\{{ item }}.zip
     remote_src: yes
   with_items: "{{ webservice }}"
 
 - name: Remove Archive.zip in {{ item }}
   win_file:
-    path: E:\{{ item }}\Archive.zip
+    path: {{ disk }}{{ item }}\Archive.zip
     state: absent
   with_items: "{{ webservice }}"
 
 - name: Unzip Archive.zip in Depot\Archive
   win_unzip:
-    src: E:\Depot\Archive\{{ item }}\{{ item }}.zip
-    dest: E:\Depot\Archive\{{ item }}
+    src: {{ disk }}Depot\Archive\{{ item }}\{{ item }}.zip
+    dest: {{ disk }}Depot\Archive\{{ item }}
     remote_src: yes
   with_items: "{{ webservice }}"
 
 - name: Zip all file in Depot\Archive
   win_shell: |
     $compress = @{
-    Path= "E:\{{ item }}\Web.config", "E:\{{ item }}\bin", "E:\{{ item }}\{{ item }}.svc"
+    Path= "{{ disk }}{{ item }}\Web.config", "{{ disk }}{{ item }}\bin", "{{ disk }}{{ item }}\{{ item }}.svc"
     CompressionLevel = "Fastest"
-    DestinationPath = "E:\Depot\Archive\{{ item }}\{{ date }}.zip"
+    DestinationPath = "{{ disk }}Depot\Archive\{{ item }}\{{ date }}.zip"
     }
     Compress-Archive @compress
   with_items: "{{ webservice }}"
 
 - name: Delete Archive.zip in Depot\Archive
   win_file:
-    path: E:\Depot\Archive\{{ item }}\{{ item }}.zip
+    path: {{ disk }}Depot\Archive\{{ item }}\{{ item }}.zip
     state: absent
   with_items: "{{ webservice }}"
 
 - name: Zip all file in Depot\Archive
   win_shell: |
     $compress = @{
-    Path= "E:\Depot\Archive\{{ item }}\*"
+    Path= "{{ disk }}Depot\Archive\{{ item }}\*"
     CompressionLevel = "Fastest"
-    DestinationPath = "E:\{{ item }}\Archive.zip"
+    DestinationPath = "{{ disk }}{{ item }}\Archive.zip"
     }
     Compress-Archive @compress
   with_items: "{{ webservice }}"
 
 - name: Remove Depot\Archive
   win_file:
-    path: E:\Depot\Archive
+    path: {{ disk }}Depot\Archive
     state: absent
