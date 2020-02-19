@@ -1,6 +1,6 @@
 ---
 - name: Zip all file in Depot\Archive
-  win_shell: |
+  win_shell:
     $YourDirToCompress="E:\Work\ConsolidationService"
     ZipFileResult="E:\Work\ConsolidationService\Archive\TEST.zip"
     $DirToExclude=@("*Archive*", "*archive*", "*ARCHIVE*")
