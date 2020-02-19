@@ -29,6 +29,6 @@
 - hosts: windows-server
   vars:  
     - inputname:
-      - ConsolidationService
+      - DataProductionService
   roles:
-    - role: archive_input
+    - role: update_input

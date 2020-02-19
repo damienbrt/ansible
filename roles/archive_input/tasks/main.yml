@@ -7,4 +7,5 @@
     Get-ChildItem $YourDirToCompress -Directory -Exclude $DirToExclude |
     Compress-Archive -DestinationPath $ZipFileResult -Update
   with_items: "{{ inputname }}"
-  # (Get-ChildItem "E:\Depot\Artifactory\Inputs").Name | %{Remove-Item "E:\Work\Test\Test\$($_)" -Force -Recurse -ErrorAction Ignore}
+  # (Get-ChildItem "E:\Depot\Artifactory\Inputs").Name | 
+  # %{Remove-Item "E:\Work\Test\Test\$($_)" -Force -Recurse -ErrorAction Ignore}
