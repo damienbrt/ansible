@@ -1,7 +1,10 @@
 ---
 - name: Delete old inputs
   win_shell: |
-    (Get-ChildItem "E:\Depot\Artifactory\Inputs").Name | 
+    (Get-ChildItem "E:\Depot\Artifactory\{{ item }}\Inputs").Name | 
     %{Remove-Item "E:\Work\{{ item }}\$($_)" -Force -Recurse -ErrorAction Ignore}
   with_items: "{{ inputname }}"
 
+- name: Copy new inputs
+  win_shell: Get-ChildItem -Path "E:\Depot\Artifactory\{{ item }}\Inputs" | Copy-Item -Destination E:\Work\{{ item }}\
+  with_items: "{{ inputname }}"
