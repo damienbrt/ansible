@@ -1,7 +1,7 @@
 ---
 - name: Delete old inputs
   win_shell: |
-    (Get-ChildItem "E:\Depot\{{ item }}\Inputs").Name | 
+    (Get-ChildItem "E:\Depot\Artifactory\Inputs").Name | 
     %{Remove-Item "E:\Work\{{ item }}\$($_)" -Force -Recurse -ErrorAction Ignore}
   with_items: "{{ inputname }}"
 
