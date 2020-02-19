@@ -31,4 +31,5 @@
     - inputname:
       - DataProductionService
   roles:
+    - role: archive_input
     - role: update_input
