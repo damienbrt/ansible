@@ -1,20 +1,10 @@
 ---
 - name: Zip all file in Depot\Archive
-  win_shell:  $YourDirToCompress="E:\Work\ConsolidationService"
-              ZipFileResult="E:\Work\ConsolidationService\Archive\TEST.zip"
-              $DirToExclude=@("*Archive*", "*archive*", "*ARCHIVE*")
-
-              Get-ChildItem $YourDirToCompress -Directory -Exclude $DirToExclude | 
-              Compress-Archive -DestinationPath $ZipFileResult -Update
-
+  win_shell: | 
+    $YourDirToCompress="E:\Work\ConsolidationService"
+    ZipFileResult="E:\Work\ConsolidationService\Archive\TEST.zip"
+    $DirToExclude=@("*Archive*", "*archive*", "*ARCHIVE*")
+    Get-ChildItem $YourDirToCompress -Directory -Exclude $DirToExclude | 
+    Compress-Archive -DestinationPath $ZipFileResult -Update
 
   # (Get-ChildItem "E:\Depot\Artifactory\Inputs").Name | %{Remove-Item "E:\Work\Test\Test\$($_)" -Force -Recurse -ErrorAction Ignore}
-
-
-# $YourDirToCompress="E:\Work\ConsolidationService"
-# $ZipFileResult="E:\Work\ConsolidationService\Archive\TEST.zip"
-# $DirToExclude=@("Archive","_archive","")
-
-# Get-ChildItem $YourDirToCompress -Directory  | 
-# where { $_.Name -notin $DirToExclude} | 
-# Compress-Archive -DestinationPath $ZipFileResult -Update
