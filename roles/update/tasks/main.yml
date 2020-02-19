@@ -1,8 +1,0 @@
----
-- name: Delete dll
-  win_shell: Get-ChildItem -Path "E:\{{ item }}\bin\*.dll" | Remove-Item
-  with_items: "{{ webservice }}"
-
-- name: Copy dll
-  win_shell: Get-ChildItem -Path "E:\Depot\Artifactory\{{ item }}\bin\*.dll" | Copy-Item -Destination E:\{{ item }}\bin\
-  with_items: "{{ webservice }}"
