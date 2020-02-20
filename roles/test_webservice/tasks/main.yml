@@ -1,8 +1,9 @@
 ---
 - name: Restart Web Service IIS
   win_iis_website:
-    name: ConsolidationService
+    name: '{{ item }}'
     state: restarted
+  with_items: "{{ webservice }}"
 
 - name: Test web service
   win_uri:

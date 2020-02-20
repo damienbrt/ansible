@@ -5,30 +5,30 @@
       - ConsolidationService
       - ConversionService
 
-  roles:
-    - role: artifactory
-    - role: archive
-    - role: update_dll
-    - role: update_webconfig
-      vars:
-        webconfig: Web.config
-        webservice:
-          - ConsolidationService
-    # - role: update_input
-    #   vars:
-    #     inputname:
-    #       - example
+#   roles:
+#     - role: artifactory
+#     - role: archive
+#     - role: update_dll
+#     - role: update_webconfig
+#       vars:
+#         webconfig: Web.config
+#         webservice:
+#           - ConsolidationService
+#     # - role: update_input
+#     #   vars:
+#     #     inputname:
+#     #       - example
 
-- hosts: windows-sql
-  vars:  
-    - sql_name: ALBVAL
-    - file_name: 
-      - Db_Qualification_to19.5.0.2
+# - hosts: windows-sql
+#   vars:  
+#     - sql_name: ALBVAL
+#     - file_name: 
+#       - Db_Qualification_to19.5.0.2
 
-  roles:
-    - role: artifactory
-    - role: update_sql
-    - role: restart_sql_server
+#   roles:
+#     - role: artifactory
+#     - role: update_sql
+#     - role: restart_sql_server
 
 - hosts: windows-server
 
