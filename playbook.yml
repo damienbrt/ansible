@@ -14,7 +14,7 @@
         webconfig: Web.config
         webservice:
           - ConsolidationService
-    - role: update_input
+    # - role: update_input
 
 - hosts: windows-sql
   vars:  
