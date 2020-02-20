@@ -1,0 +1,5 @@
+---
+- name: Acme IIS site
+  win_iis_website:
+    name: ConsolidationService
+    state: stopped
