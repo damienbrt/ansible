@@ -1,27 +1,27 @@
 ---
 - name: Create Depot\Archive
   win_file:
-    path: {{ disk }}Depot\Archive\{{ item }}
+    path: "{{ disk }}"Depot\Archive\{{ item }}
     state: directory
   with_items: "{{ webservice }}"
 
 - name: Copy Archive.zip in Depot\Archive
   win_copy:
-    src: {{ disk }}{{ item }}\Archive.zip
-    dest: {{ disk }}Depot\Archive\{{ item }}\{{ item }}.zip
+    src: "{{ disk }}""{{ item }}"\Archive.zip
+    dest: "{{ disk }}"Depot\Archive\{{ item }}\{{ item }}.zip
     remote_src: yes
   with_items: "{{ webservice }}"
 
 - name: Remove Archive.zip in {{ item }}
   win_file:
-    path: {{ disk }}{{ item }}\Archive.zip
+    path: "{{ disk }}""{{ item }}"\Archive.zip
     state: absent
   with_items: "{{ webservice }}"
 
 - name: Unzip Archive.zip in Depot\Archive
   win_unzip:
-    src: {{ disk }}Depot\Archive\{{ item }}\{{ item }}.zip
-    dest: {{ disk }}Depot\Archive\{{ item }}
+    src: "{{ disk }}"Depot\Archive\{{ item }}\{{ item }}.zip
+    dest: "{{ disk }}"Depot\Archive\{{ item }}
     remote_src: yes
   with_items: "{{ webservice }}"
 
@@ -37,7 +37,7 @@
 
 - name: Delete Archive.zip in Depot\Archive
   win_file:
-    path: {{ disk }}Depot\Archive\{{ item }}\{{ item }}.zip
+    path: "{{ disk }}"Depot\Archive\{{ item }}\{{ item }}.zip
     state: absent
   with_items: "{{ webservice }}"
 
@@ -53,5 +53,5 @@
 
 - name: Remove Depot\Archive
   win_file:
-    path: {{ disk }}Depot\Archive
+    path: "{{ disk }}"Depot\Archive
     state: absent
