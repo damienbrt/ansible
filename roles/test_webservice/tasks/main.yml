@@ -8,3 +8,4 @@
   win_uri:
     url: https://localhost:4023/ConsolidationService.svc?wsdl
     validate_certs: no
+    return_content: yes
