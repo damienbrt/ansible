@@ -6,9 +6,9 @@
       - ConversionService
 
   roles:
-    - role: artifactory
-    - role: archive
-    - role: update_dll
+    # - role: artifactory
+    # - role: archive
+    # - role: update_dll
     - role: update_webconfig
       vars:
         webconfig: Web.config
