@@ -6,6 +6,6 @@
 
 - name: Perform a GET and Store Output
   win_uri:
-    url: https://localhost:4023/ConsolidationService.svc?wsdl
+    url: https://dataproductionint.navblue.aero/
     validate_certs: no
     status_code: 200
