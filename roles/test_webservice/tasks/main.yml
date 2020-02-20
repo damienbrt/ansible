@@ -1,5 +1,10 @@
 ---
-- name: Acme IIS site
+- name: Restart Web Service IIS
   win_iis_website:
     name: ConsolidationService
     state: restarted
+
+- name: Perform a GET and Store Output
+  win_uri:
+    url: https://localhost:4023/ConsolidationService.svc?wsdl
+    status_code:
