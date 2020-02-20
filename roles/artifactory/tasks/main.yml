@@ -11,7 +11,7 @@
 
 - name: Delete directory Artifactory
   win_file:
-    path: "{{ disk }}"Depot\Artifactory
+    path: {{ disk }}Depot\Artifactory
     state: absent
 
 - name: Create directory Artifactory
