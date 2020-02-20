@@ -1,7 +1,7 @@
 ---
 - name: Create Depot\Archive
   win_file:
-    path: "{{ disk }}Depot\Archive\{{ item }}"
+    path: "{{ disk }}"Depot\Archive\{{ item }}
     state: directory
   with_items: "{{ webservice }}"
 

@@ -1,22 +1,22 @@
 ---
 - name: Delete directory Depot
   win_file:
-    path: {{ disk }}Depot
+    path: "{{ disk }}"Depot
     state: absent
 
 - name: Create directory Depot
   win_file:
-    path: {{ disk }}Depot
+    path: "{{ disk }}"Depot
     state: directory
 
 - name: Delete directory Artifactory
   win_file:
-    path: {{ disk }}Depot\Artifactory
+    path: "{{ disk }}"Depot\Artifactory
     state: absent
 
 - name: Create directory Artifactory
   win_file:
-    path: {{ disk }}Depot\Artifactory
+    path: "{{ disk }}"Depot\Artifactory
     state: directory
 
 - name: Download artifactory on local
@@ -26,7 +26,7 @@
 - name: Copy file and paste on remote host
   win_copy:
     src: depot/{{ url_artifactory }}
-    dest: {{ disk }}Depot\Artifactory\
+    dest: "{{ disk }}"Depot\Artifactory\
 
 - name: Remove file in depot local
   file: path=depot/{{ url_artifactory }} state=absent
@@ -34,6 +34,6 @@
 
 - name: Unzip Artifactory
   win_unzip:
-    src: {{ disk }}Depot\Artifactory\{{ url_artifactory }}
-    dest: {{ disk }}Depot\Artifactory\
+    src: "{{ disk }}"Depot\Artifactory\{{ url_artifactory }}
+    dest: "{{ disk }}"Depot\Artifactory\
     recurse: yes
