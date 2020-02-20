@@ -7,4 +7,4 @@
 - name: Perform a GET and Store Output
   win_uri:
     url: https://localhost:4023/ConsolidationService.svc?wsdl
-  validate_certs: yes
+    validate_certs: yes
