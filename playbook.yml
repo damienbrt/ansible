@@ -31,7 +31,9 @@
 #     - role: restart_sql_server
 
 - hosts: windows-server
-
+  vars:
+    - url_wsdl:
+        - https://localhost:4028/BulletinGenerationService.svc?wsdl
   roles:
 #     - role: iisreset
     - role: test_webservice

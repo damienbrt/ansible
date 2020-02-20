@@ -6,6 +6,7 @@
 
 - name: Perform a GET and Store Output
   win_uri:
-    url: https://dataproductionint.navblue.aero/
+    url: '{{ item }}'
     validate_certs: no
     status_code: 200
+  with_items: "{{ url_wsdl }}"
