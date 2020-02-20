@@ -1,7 +1,7 @@
 ---
 - name: Delete directory Depot
   win_file:
-    path: "{{ disk }}"Depot
+    path: "{{ disk }}Depot"
     state: absent
 
 - name: Create directory Depot
