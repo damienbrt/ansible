@@ -4,4 +4,4 @@
   with_items: "{{ webservice }}"
 
 - name: Copy new web config
-  win_shell: Get-ChildItem -Path "{{ disk }}Depot\Artifactory\{{ item }}\{{ webconfig }}" | Copy-Item -Destination {{ disk }}{{ item }}\test.config
+  win_shell: Get-ChildItem -Path "{{ disk }}Depot\Artifactory\{{ item }}\{{ webconfig }}" | Copy-Item -Destination "{{ disk }}{{ item }}\test.config"
