@@ -1,9 +1,5 @@
 ---
 - hosts: windows-server
-  vars:  
-    - webservice:
-      - ConsolidationService
-      - ConversionService
 
 #   roles:
 #     - role: artifactory
