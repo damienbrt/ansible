@@ -4,7 +4,7 @@
     name: ConsolidationService
     state: restarted
 
-- name: Perform a GET and Store Output
+- name: Test web service
   win_uri:
     url: '{{ item }}'
     validate_certs: no
