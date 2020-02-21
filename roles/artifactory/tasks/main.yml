@@ -1,6 +1,7 @@
 ---
+#This role is used for download and push on remote host the artifactory file
 - name: Delete directory Depot
-  win_file:
+  win_file: #Module for Creates, touches or removes files or directories (windows)
     path: '{{ disk }}Depot'
     state: absent
 
@@ -20,20 +21,20 @@
     state: directory
 
 - name: Download artifactory on local
-  get_url: url=https://artifactory.navblue.tech/artifactory/data-plus/Production-Services/{{ url_artifactory }} dest=depot/
-  delegate_to: localhost
+  get_url: url=https://artifactory.navblue.tech/artifactory/data-plus/Production-Services/{{ url_artifactory }} dest=depot/ #Module for Downloads file from HTTP, HTTPS
+  delegate_to: localhost #Execute on local
 
 - name: Copy file and paste on remote host
-  win_copy:
+  win_copy: #Module for Copies files to remote locations on windows hosts
     src: depot/{{ url_artifactory }}
     dest: '{{ disk }}Depot\Artifactory\'
 
 - name: Remove file in depot local
-  file: path=depot/{{ url_artifactory }} state=absent
+  file: path=depot/{{ url_artifactory }} state=absent #Module for Creates, touches or removes files or directories (linux)
   delegate_to: localhost
 
 - name: Unzip Artifactory
-  win_unzip:
+  win_unzip: #Module for Unzips compressed files and archives on the Windows node
     src: '{{ disk }}Depot\Artifactory\{{ url_artifactory }}'
     dest: '{{ disk }}Depot\Artifactory\'
     recurse: yes

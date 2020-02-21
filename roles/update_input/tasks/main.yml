@@ -1,4 +1,5 @@
 ---
+#This role is used for update the input file
 - name: Zip all file in Depot\Archive
   win_shell: |
     $YourDirToCompress="{{ disk }}Work\{{ item }}"

@@ -1,9 +1,10 @@
 ---
+#This role is used for archive webconfig file, svc file and bin directory
 - name: Create Depot\Archive
   win_file:
     path: '{{ disk }}Depot\Archive\{{ item }}'
     state: directory
-  with_items: "{{ webservice }}"
+  with_items: "{{ webservice }}" #Loop for variable
 
 - name: Copy Archive.zip in Depot\Archive
   win_copy:
@@ -12,7 +13,7 @@
     remote_src: yes
   with_items: "{{ webservice }}"
 
-- name: Remove Archive.zip in {{ item }}
+- name: Remove Archive.zip in webservice
   win_file:
     path: '{{ disk }}{{ item }}\Archive.zip'
     state: absent
@@ -26,7 +27,7 @@
   with_items: "{{ webservice }}"
 
 - name: Zip all file in Depot\Archive
-  win_shell: |
+  win_shell: | #Module for Execute shell commands on target hosts
     $compress = @{
     Path= "{{ disk }}{{ item }}\Web.config", "{{ disk }}{{ item }}\bin", "{{ disk }}{{ item }}\{{ item }}.svc"
     CompressionLevel = "Fastest"

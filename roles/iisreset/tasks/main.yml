@@ -1,4 +1,5 @@
 ---
+#This role is used for execute the command iisrest on the remote host 
 - name: iisreset
-  win_command: iisreset
+  win_command: iisreset #Module for Executes a command on a remote Windows node
 

@@ -1,3 +1,4 @@
 ---
+#This role is used for test the connection with remote host
 - name: test connection
-  win_ping:
+  win_ping: #Test connection

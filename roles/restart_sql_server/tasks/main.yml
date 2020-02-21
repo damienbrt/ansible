@@ -1,6 +1,7 @@
 ---
+#This role is used for restart sql server
 - name: STOP sql server
-  win_shell: Stop-Service -Name 'MSSQL${{ sql_name }}' -Force
+  win_shell: Stop-Service -Name 'MSSQL${{ sql_name }}' -Force #Module for Execute shell commands on target hosts
 
 - name: START sql server
   win_shell: Start-Service -Name 'MSSQL${{ sql_name }}'

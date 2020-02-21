@@ -1,4 +1,5 @@
 ---
+#This role is used for update the web config file
 - name: Delete old web config
   win_shell: Get-ChildItem -Path "{{ disk }}{{ item }}\Web.config" | Remove-Item
   with_items: "{{ webservice }}"

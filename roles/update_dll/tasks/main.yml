@@ -1,4 +1,5 @@
 ---
+#This role is used for update the dll file in webservice file
 - name: Delete old dll
   win_shell: Get-ChildItem -Path "{{ disk }}{{ item }}\bin\*.dll" | Remove-Item
   with_items: "{{ webservice }}"

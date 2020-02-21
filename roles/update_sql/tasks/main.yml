@@ -1,4 +1,5 @@
 ---
+#This role is used for update the database
 - name: Update sql
   win_command: sqlcmd -S VMPMEALBUATDB1\ALBVAL -U Albatross -P Lucem123* -i {{ disk }}Depot\Artifactory\SQL\Deployments\{{ item }}.sql
   with_items: "{{ file_name }}"

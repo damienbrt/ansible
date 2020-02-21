@@ -1,13 +1,14 @@
 ---
+#This role is used for test the webservice
 - name: Restart Web Service IIS
-  win_iis_website:
+  win_iis_website: #Module for Configures a IIS Web site
     name: '{{ item }}'
     state: restarted
   with_items: "{{ webservice }}"
 
 - name: Test web service
-  win_uri:
+  win_uri: #Module for Interacts with webservices
     url: '{{ item }}'
-    validate_certs: no
-    status_code: 200
+    validate_certs: no #If no, SSL certificates will not be validated.
+    status_code: 200 #HTTP status code that signifies success of the request
   with_items: "{{ url_wsdl }}"
