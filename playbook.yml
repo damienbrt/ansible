@@ -4,34 +4,34 @@
   roles: #Role name in order
     - role: artifactory
     - role: archive
-    - role: update_dll
-    - role: update_webconfig
-      vars:
-        webconfig: Web.config #Name of new file web config
-        webservice: #Name of webservices for update web config
-          - ConsolidationService
-    # - role: update_input
-    #   vars:
-    #     inputname: #Name of directory input file
-    #       - example 
+#     - role: update_dll
+#     - role: update_webconfig
+#       vars:
+#         webconfig: Web.config #Name of new file web config
+#         webservice: #Name of webservices for update web config
+#           - ConsolidationService
+#     # - role: update_input
+#     #   vars:
+#     #     inputname: #Name of directory input file
+#     #       - example 
 
-- hosts: windows-sql #Name of host to execute role
+# - hosts: windows-sql #Name of host to execute role
 
-  roles: #Role name in order
-    - role: artifactory
-    - role: update_sql
-      vars:
-        file_name: #File name of sql update
-          - Db_Qualification_to19.5.0.2
-    - role: restart_sql_server
-      vars:
-        sql_name: ALBVAL #Name of sql server
+#   roles: #Role name in order
+#     - role: artifactory
+#     - role: update_sql
+#       vars:
+#         file_name: #File name of sql update
+#           - Db_Qualification_to19.5.0.2
+#     - role: restart_sql_server
+#       vars:
+#         sql_name: ALBVAL #Name of sql server
 
-- hosts: windows-server #Name of host to execute role
+# - hosts: windows-server #Name of host to execute role
 
-  roles: #Role name in order
-    - role: iisreset
-    - role: test_webservice
-      vars:
-        url_wsdl: #Url wsdl for test webservice
-          - https://localhost:4023/ConsolidationService.svc?wsdl
+#   roles: #Role name in order
+#     - role: iisreset
+#     - role: test_webservice
+#       vars:
+#         url_wsdl: #Url wsdl for test webservice
+#           - https://localhost:4023/ConsolidationService.svc?wsdl
